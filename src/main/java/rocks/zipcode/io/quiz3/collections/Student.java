@@ -8,18 +8,21 @@ import java.util.TreeMap;
  * @author leon on 10/12/2018.
  */
 public class Student {
-    private Map<Lab, LabStatus> statusMap;
+    // make a instance variable for maps
+    private Map<Lab, LabStatus> Map;
+
+
     public Student() {
        this(new TreeMap<>());
     }
 
     public Student(Map<Lab, LabStatus> labs) {
-        this.statusMap = labs;
+        this.Map = labs;
 
     }
 
     public Lab getLab(String labName) {
-        for (Lab lab : statusMap.keySet()){
+        for (Lab lab : Map.keySet()){
             if (labName.equals(lab.getName())){
                 return lab;
             }
@@ -28,25 +31,25 @@ public class Student {
     }
 
     public void setLabStatus(String labName, LabStatus labStatus) {
-        if(getLab(labName) == null){
+       if (getLab(labName)== null){
             throw new UnsupportedOperationException("This lab has not been forked!");
         }
-        statusMap.put(getLab(labName), labStatus);
+        Map.put(getLab(labName), labStatus);
     }
 
 
     public void forkLab(Lab lab) {
-        statusMap.put(lab, LabStatus.PENDING);
+        Map.put(lab, LabStatus.PENDING);
     }
 
     public LabStatus getLabStatus(String labName) {
-       return statusMap.get(getLab(labName));
+       return Map.get(getLab(labName));
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "statusMap=" + statusMap +
+                "statusMap=" + Map +
                 '}';
     }
 }

@@ -22,7 +22,7 @@ public class SquareArrayAnalyzer {
         Arrays.sort(squaredValues);
     // iterate through the orginal array
         for (int i = 0; i < inputArray.length; i++){
-          // multiply the the array by itself and set it = to a varibale
+          // multiply the the array by itself and set it = to a variable
             int square = inputArray[i] * inputArray[i];
             // if statement
             // if square is not = to the squareValues of i

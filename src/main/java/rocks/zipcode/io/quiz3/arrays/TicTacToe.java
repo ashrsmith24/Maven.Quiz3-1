@@ -19,7 +19,7 @@ public class TicTacToe {
     }
 
     public String[] getColumn(Integer value) {
-        // instanz a new string array thats the same length of the board length
+        // instan a new string array thats the same length of the board length
         String[] column = new String[board.length];
        //for loop interating though the board
         for (int row = 0; row < board.length; row++) {
@@ -53,7 +53,7 @@ public class TicTacToe {
         }
         // check the column
         for (int i = 0; i < board.length; i++) {
-           //if statement - is the column
+           //if statement , is the column
             if (isColumnHomogeneous(i)) {
                 return board[0][i];
             }
